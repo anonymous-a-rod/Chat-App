@@ -12,17 +12,15 @@ const style = {
 }
 
 const googleSignIn = () => {
-  const provider = new GoogleAuthProvider();
+  const provider = new GoogleAuthProvider()
   provider.addScope('https://www.googleapis.com/auth/userinfo.email');
-  provider.setCustomParameters({ 'hd': 'https://chatsphere.netlify.app' });
   signInWithRedirect(auth, provider)
-    .then((result) => console.log(result))
-    .catch((error) => {
-      if (error.code === 'auth/account-exists-with-different-credential') {
-        console.log(error);
-      }
-      console.log(error)
-    });
+  .then((result) => console.log(result))
+  .catch((error) => {
+    if (error.code === 'auth/account-exists-with-different-credential'){
+      console.log(error);
+    }
+      console.log(error)})
 }
 
 // const facebookSignIn = () => {
