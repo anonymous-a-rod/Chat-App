@@ -11,16 +11,30 @@ const style = {
     wrapper: `flex justify-center flex-col`,
 }
 
-const googleSignIn = () => {
-  const provider = new GoogleAuthProvider()
-  signInWithRedirect(auth, provider)
-  .then((result) => console.log(result))
-  .catch((error) => {
-    if (error.code === 'auth/account-exists-with-different-credential'){
+const googleSignIn = async () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  try {
+    const result = await firebase.auth().signInWithPopup(provider);
+    console.log(result);
+  } catch (error) {
+    if (error.code === 'auth/account-exists-with-different-credential') {
+      console.log(error);
+    } else {
       console.log(error);
     }
-      console.log(error)})
-}
+  }
+};
+
+// const googleSignIn = () => {
+//   const provider = new GoogleAuthProvider()
+//   signInWithRedirect(auth, provider)
+//   .then((result) => console.log(result))
+//   .catch((error) => {
+//     if (error.code === 'auth/account-exists-with-different-credential'){
+//       console.log(error);
+//     }
+//       console.log(error)})
+// }
 
 // const facebookSignIn = () => {
 //   const provider = new FacebookAuthProvider()
