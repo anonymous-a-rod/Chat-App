@@ -6,7 +6,7 @@ import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
 
 const style = {
   main: `flex flex-col p-[10px] `,
-  chatContainer: `overflow-y-scroll relative flex flex-col-reverse pb-14`
+  chatContainer: `overflow-y-scroll relative flex flex-col-reverse mb-14`
 };
 
 const Chat = () => {
