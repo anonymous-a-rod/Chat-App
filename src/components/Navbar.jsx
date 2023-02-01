@@ -4,8 +4,8 @@ import LogOut from './LogOut'
 import {auth} from '../firebase'
 import {useAuthState} from 'react-firebase-hooks/auth'
 const style = {
-    nav: `bg-gray-800 h-30 flex justify-between items-center p-4`,
-    heading: `text-white text-3xl`
+    nav: `bg-gray-800 h-30 flex justify-between items-center p-4 max-sm:flex-col`,
+    heading: `text-white text-3xl max-sm:pb-4`
 }
 
 const Navbar = () => {
