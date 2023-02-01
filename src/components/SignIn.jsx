@@ -13,7 +13,6 @@ const style = {
 
 const googleSignIn = () => {
   const provider = new GoogleAuthProvider()
-  provider.addScope('https://www.googleapis.com/auth/userinfo.email');
   signInWithRedirect(auth, provider)
   .then((result) => console.log(result))
   .catch((error) => {
