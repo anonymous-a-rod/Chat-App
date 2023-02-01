@@ -17,6 +17,7 @@ const googleSignIn = () => {
     .then((result) => console.log(result))
     .catch((error) => {
       if (error.code === 'auth/account-exists-with-different-credential'){
+        console.log(error);
         facebookSignIn();
       }
         console.log(error)})
