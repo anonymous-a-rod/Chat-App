@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Chat from './components/Chat';
-import {isMobile} from 'react-device-detect';
+// import {isMobile} from 'react-device-detect';
 
 import { auth } from './firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -12,13 +12,13 @@ const style = {
   mobile: `mt-40 max-w-[250px] mx-auto text-center`
 };
 
-const DetectMobile = () => {
-  return (
-    <div>
-      <h1 className={style.mobile}>{isMobile ? "Sorry, but this chat application is only supported on web browsers" : null}</h1>
-    </div>
-  );
-};
+// const DetectMobile = () => {
+//   return (
+//     <div>
+//       <h1 className={style.mobile}>{isMobile ? "Sorry, but this chat application is only supported on web browsers" : null}</h1>
+//     </div>
+//   );
+// };
 
 function App() {
   const [user] = useAuthState(auth);
@@ -29,7 +29,7 @@ function App() {
         {/* Navbar */}
         <Navbar />
         {user ? <Chat /> : null}
-       <DetectMobile/>
+       {/* <DetectMobile/> */}
       </section>
     </div>
   );
